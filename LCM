@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class LCM {
+    public static void main(String [] args){
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("enter a");
+        int a= sc.nextInt();
+        System.out.println("enter b");
+        int b= sc.nextInt();
+
+        int lcm=a;
+        if(lcm%b!=0){
+            lcm=lcm+a;
+        }
+        System.out.println(lcm);
+    }
+}
