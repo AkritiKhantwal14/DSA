@@ -1,0 +1,33 @@
+import java.util.Scanner;
+class Solution {
+    public int[] runningSum(int[] nums) {
+        int n= nums.length;
+        int rsum[]= new int[n];
+        int sum=0;
+        for(int i=0; i<n; i++){
+            sum=sum+nums[i];
+            rsum[i]= sum;
+
+        }
+        return rsum;
+    }
+
+    public static void main(String args[]){
+        Scanner sc= new Scanner(System.in);
+        int n = sc.nextInt();
+        int nums[]= new int[n];
+        for(int i=0; i<n; i++){
+            nums[i]= sc.nextInt();
+        }
+
+        Solution sol=new Solution();
+        int result[]= sol.runningSum(nums);
+
+        for(int x: result){
+            System.out.println(x);
+        }
+        sc.close();
+    }
+    
+    
+}
