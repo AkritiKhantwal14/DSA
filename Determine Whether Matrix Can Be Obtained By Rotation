@@ -1,0 +1,38 @@
+class Solution {
+    public boolean findRotation(int[][] mat, int[][] target) {
+        for(int k=0;k<4;k++){
+            mat=rotate(mat);
+            if(same(mat,target)){
+                return true;
+            }
+        }
+
+        return false;
+    }
+    public int[][] rotate(int[][] mat){
+        int n=mat.length;
+        int [][] rotated=new int[n][n];
+        for(int i=0; i<n; i++){
+            for(int j=0; j<n; j++){
+                rotated[j][mat.length-1-i]=mat[i][j];
+                   
+            
+            }
+            
+        }
+        return rotated;
+    }
+    public boolean same(int[][] mat, int[][] target){
+        for(int i=0; i<mat.length; i++){
+            for(int j=0; j<mat[i].length; j++){
+                if(mat[i][j]!=target[i][j]){
+                    return false;
+                    
+                }
+            }
+        }
+       
+     return true; 
+    }
+    
+}
